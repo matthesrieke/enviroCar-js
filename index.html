@@ -8,20 +8,33 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <link rel="stylesheet"
+		href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/dojo/dijit/themes/tundra/tundra.css">
+	<link rel="stylesheet"
+		href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/esri/css/esri.css">
+    <link rel="stylesheet" href="http://raw.github.com/matthesrieke/enviroCar-js/master/css/enviroCarMap.css" />
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    
+	<script>
+		var dojoConfig = {
+			parseOnLoad : true
+		};
+	</script>
+	<script src="http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/"></script>
+	<script src="http://raw.github.com/matthesrieke/enviroCar-js/master/js/enviroCarMap.js"></script>
 
-    <title>enviroCar-js by matthesrieke</title>
+    <title>enviroCar-js by 52North</title>
   </head>
 
   <body>
     <header>
       <div class="inner">
         <h1>enviroCar-js</h1>
-        <h2>javascript compinents for enviroCar maps</h2>
-        <a href="https://github.com/matthesrieke/enviroCar-js" class="button"><small>View project on</small>GitHub</a>
+        <h2>javascript components for enviroCar maps</h2>
+        <a href="https://github.com/52North/enviroCar-js" class="button"><small>View project on</small>GitHub</a>
       </div>
     </header>
 
@@ -31,76 +44,91 @@
           <h3>
 <a name="envirocar-js" class="anchor" href="#envirocar-js"><span class="octicon octicon-link"></span></a>enviroCar-js</h3>
 
-<p>javascript compinents for enviroCar maps</p>
+<p>javascript components for enviroCar maps. based on ESRI ArcGIS JavaScript API 3.5</p>
+
+<h4>
+<a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>example</h4>
+
+<div data-dojo-type="dijit.layout.BorderContainer"
+	data-dojo-props="design:'headline',gutters:true"
+	style="width: 100%; height: 400px; margin: 10px 0 10px 0;">
+	<div id="map" data-dojo-type="dijit.layout.ContentPane"
+		data-dojo-props="region:'center'">
+
+		<div id="feedback" class="shadow">
+			<div style="position: absolute; right: 5px; top: 5px">
+				<img id="loading" src="images/ajax.gif" width="18" />
+			</div>
+			<h3>enviroCar Tracks</h3>
+			<div id="info">
+				<!-- filtering select -->
+				<label for="fieldNames">Select Phenomenon: </label>
+				<select	id="fieldNames" name="baseSym"
+					data-dojo-type="dijit.form.FilteringSelect"
+					data-dojo-props="style:'width:200px;'">
+				</select>
+			</div>
+		</div>
+	</div>
+</div>
 
 <h4>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>usage</h4>
 
-<div class="highlight"><pre><span class="cp">&lt;!doctype html&gt;</span>
+<div class="highlight">
+<pre><span class="cp">&lt;!doctype html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span>
+            <span class="na">href=</span><span class="s">"http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/dojo/dijit/themes/tundra/tundra.css"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span>
+            <span class="na">href=</span><span class="s">"http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/esri/css/esri.css"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"http://raw.github.com/52North/enviroCar-js/master/css/enviroCarMap.css"</span> <span class="nt">/&gt;</span>
 
-<span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=7, IE=9, IE=10"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span>
-        <span class="na">content=</span><span class="s">"initial-scale=1, maximum-scale=1,user-scalable=no"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;title&gt;</span>enviroCar JS example<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;script&gt;</span><span class="kd">var</span> <span class="nx">dojoConfig</span> <span class="o">=</span> <span class="p">{</span><span class="nx">parseOnLoad</span> <span class="o">:</span> <span class="kc">true</span><span class="p">};</span><span class="nt">&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/"</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://raw.github.com/52North/enviroCar-js/master/js/enviroCarMap.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
 
-    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span>
-        <span class="na">href=</span><span class="s">"http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/dojo/dijit/themes/tundra/tundra.css"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span>
-        <span class="na">href=</span><span class="s">"http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/js/esri/css/esri.css"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"css/enviroCarMap.css"</span> <span class="nt">/&gt;</span>
-
-    <span class="nt">&lt;script&gt;</span><span class="kd">var</span> <span class="nx">dojoConfig</span> <span class="o">=</span> <span class="p">{</span><span class="nx">parseOnLoad</span> <span class="o">:</span> <span class="kc">true</span><span class="p">};</span><span class="nt">&lt;/script&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://serverapi.arcgisonline.com/jsapi/arcgis/3.5/"</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"js/enviroCarMap.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-
-<span class="nt">&lt;body</span> <span class="na">class=</span><span class="s">"tundra"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">data-dojo-type=</span><span class="s">"dijit.layout.BorderContainer"</span>
-        <span class="na">data-dojo-props=</span><span class="s">"design:'headline',gutters:false"</span>
-        <span class="na">style=</span><span class="s">"width: 100%; height: 100%; margin: 0;"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"map"</span> <span class="na">data-dojo-type=</span><span class="s">"dijit.layout.ContentPane"</span>
-            <span class="na">data-dojo-props=</span><span class="s">"region:'center'"</span><span class="nt">&gt;</span>
-
-            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"feedback"</span> <span class="na">class=</span><span class="s">"shadow"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"position: absolute; right: 5px; top: 5px"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;img</span> <span class="na">id=</span><span class="s">"loading"</span> <span class="na">src=</span><span class="s">"images/ajax.gif"</span> <span class="na">width=</span><span class="s">"18"</span> <span class="nt">/&gt;</span>
-                <span class="nt">&lt;/div&gt;</span>
-                <span class="nt">&lt;h3&gt;</span>enviroCar Tracks<span class="nt">&lt;/h3&gt;</span>
-                <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"info"</span><span class="nt">&gt;</span>
-                    <span class="c">&lt;!-- filtering select --&gt;</span>
-                    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"fieldNames"</span><span class="nt">&gt;</span>Select Phenomenon: <span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;select</span>
-                        <span class="na">id=</span><span class="s">"fieldNames"</span> <span class="na">name=</span><span class="s">"baseSym"</span>
-                        <span class="na">data-dojo-type=</span><span class="s">"dijit.form.FilteringSelect"</span>
-                        <span class="na">data-dojo-props=</span><span class="s">"style:'width:200px;'"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;/select&gt;</span>
-
-                    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"legendContainer"</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"legendDiv"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;body</span> <span class="na">class=</span><span class="s">"tundra"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">data-dojo-type=</span><span class="s">"dijit.layout.BorderContainer"</span>
+            <span class="na">data-dojo-props=</span><span class="s">"design:'headline',gutters:true"</span>
+            <span class="na">style=</span><span class="s">"width: 100%; height: 400px; margin: 10px 0 10px 0;"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"enviroCarMap"</span> <span class="na">data-dojo-type=</span><span class="s">"dijit.layout.ContentPane"</span>
+                <span class="na">data-dojo-props=</span><span class="s">"region:'center'"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"feedback"</span> <span class="na">class=</span><span class="s">"shadow"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"position: absolute; right: 5px; top: 5px"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;img</span> <span class="na">id=</span><span class="s">"loading"</span> <span class="na">src=</span><span class="s">"images/ajax.gif"</span> <span class="na">width=</span><span class="s">"18"</span> <span class="nt">/&gt;</span>
                     <span class="nt">&lt;/div&gt;</span>
-
+                    <span class="nt">&lt;h3&gt;</span>enviroCar Tracks<span class="nt">&lt;/h3&gt;</span>
+                    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"info"</span><span class="nt">&gt;</span>
+                        <span class="c">&lt;!-- filtering select --&gt;</span>
+                        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"fieldNames"</span><span class="nt">&gt;</span>Select Phenomenon: <span class="nt">&lt;/label&gt;</span>
+                        <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"fieldNames"</span> <span class="na">name=</span><span class="s">"baseSym"</span>
+                            <span class="na">data-dojo-type=</span><span class="s">"dijit.form.FilteringSelect"</span>
+                            <span class="na">data-dojo-props=</span><span class="s">"style:'width:200px;'"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;/select&gt;</span>
+                    <span class="nt">&lt;/div&gt;</span>
                 <span class="nt">&lt;/div&gt;</span>
             <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
-</pre></div>
+</pre>
+</div>
         </section>
 
         <aside id="sidebar">
-          <a href="https://github.com/matthesrieke/enviroCar-js/zipball/master" class="button">
+          <a href="https://github.com/52North/enviroCar-js/zipball/master" class="button">
             <small>Download</small>
             .zip file
           </a>
-          <a href="https://github.com/matthesrieke/enviroCar-js/tarball/master" class="button">
+          <a href="https://github.com/52North/enviroCar-js/tarball/master" class="button">
             <small>Download</small>
             .tar.gz file
           </a>
 
-          <p class="repo-owner"><a href="https://github.com/matthesrieke/enviroCar-js"></a> is maintained by <a href="https://github.com/matthesrieke">matthesrieke</a>.</p>
+          <p class="repo-owner"><a href="https://github.com/52North/enviroCar-js"></a> is maintained by <a href="https://github.com/52North">52North</a>.</p>
 
           <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
         </aside>
