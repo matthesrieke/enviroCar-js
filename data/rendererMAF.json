@@ -1,0 +1,122 @@
+{
+ "type": "classBreaks",
+ "field": "maf",
+ "classificationMethod": "esriClassifyNaturalBreaks",
+ "minValue": -1,
+ "classBreakInfos": [
+  {
+   "classMaxValue": 6.66,
+   "label": "-1 - 7",
+   "description": "",
+   "symbol": {
+    "type": "esriSMS",
+    "style": "esriSMSCircle",
+    "size": 4,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0,
+    "color": [
+     255,
+     255,
+     128,
+     255
+    ]
+   }
+  },
+  {
+   "classMaxValue": 18.45,
+   "label": "8 - 18",
+   "description": "",
+   "symbol": {
+    "type": "esriSMS",
+    "style": "esriSMSCircle",
+    "size": 4,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0,
+    "color": [
+     216,
+     216,
+     87,
+     255
+    ]
+   }
+  },
+  {
+   "classMaxValue": 30.69,
+   "label": "19 - 31",
+   "description": "",
+   "symbol": {
+    "type": "esriSMS",
+    "style": "esriSMSCircle",
+    "size": 4,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0,
+    "color": [
+     177,
+     177,
+     53,
+     255
+    ]
+   }
+  },
+  {
+   "classMaxValue": 48.9016,
+   "label": "32 - 49",
+   "description": "",
+   "symbol": {
+    "type": "esriSMS",
+    "style": "esriSMSCircle",
+    "size": 4,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0,
+    "color": [
+     138,
+     138,
+     28,
+     255
+    ]
+   }
+  },
+  {
+   "classMaxValue": 80.49,
+   "label": "50 - 80",
+   "description": "",
+   "symbol": {
+    "type": "esriSMS",
+    "style": "esriSMSCircle",
+    "size": 4,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0,
+    "color": [
+     99,
+     99,
+     10,
+     255
+    ]
+   }
+  },
+  {
+   "classMaxValue": 148.44,
+   "label": "81 - 148",
+   "description": "",
+   "symbol": {
+    "type": "esriSMS",
+    "style": "esriSMSCircle",
+    "size": 4,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0,
+    "color": [
+     60,
+     60,
+     0,
+     255
+    ]
+   }
+  }
+ ]
+}

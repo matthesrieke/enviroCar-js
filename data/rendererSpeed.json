@@ -1,0 +1,276 @@
+{
+ "type": "classBreaks",
+ "field": "speed",
+ "classificationMethod": "esriClassifyQuantile",
+ "minValue": 0,
+ "classBreakInfos": [
+  {
+   "classMaxValue": 0,
+   "label": "0",
+   "description": "",
+   "symbol": {
+    "type": "esriSMS",
+    "style": "esriSMSCircle",
+    "size": 4,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0,
+    "color": [
+     56,
+     168,
+     0,
+     255
+    ]
+   }
+  },
+  {
+   "classMaxValue": 11,
+   "label": "1 - 11",
+   "description": "",
+   "symbol": {
+    "type": "esriSMS",
+    "style": "esriSMSCircle",
+    "size": 4,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0,
+    "color": [
+     81,
+     175,
+     0,
+     255
+    ]
+   }
+  },
+  {
+   "classMaxValue": 21,
+   "label": "12 - 21",
+   "description": "",
+   "symbol": {
+    "type": "esriSMS",
+    "style": "esriSMSCircle",
+    "size": 4,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0,
+    "color": [
+     107,
+     181,
+     0,
+     255
+    ]
+   }
+  },
+  {
+   "classMaxValue": 31,
+   "label": "22 - 31",
+   "description": "",
+   "symbol": {
+    "type": "esriSMS",
+    "style": "esriSMSCircle",
+    "size": 4,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0,
+    "color": [
+     135,
+     188,
+     0,
+     255
+    ]
+   }
+  },
+  {
+   "classMaxValue": 40,
+   "label": "32 - 40",
+   "description": "",
+   "symbol": {
+    "type": "esriSMS",
+    "style": "esriSMSCircle",
+    "size": 4,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0,
+    "color": [
+     165,
+     195,
+     0,
+     255
+    ]
+   }
+  },
+  {
+   "classMaxValue": 46,
+   "label": "41 - 46",
+   "description": "",
+   "symbol": {
+    "type": "esriSMS",
+    "style": "esriSMSCircle",
+    "size": 4,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0,
+    "color": [
+     196,
+     201,
+     0,
+     255
+    ]
+   }
+  },
+  {
+   "classMaxValue": 52,
+   "label": "47 - 52",
+   "description": "",
+   "symbol": {
+    "type": "esriSMS",
+    "style": "esriSMSCircle",
+    "size": 4,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0,
+    "color": [
+     208,
+     187,
+     0,
+     255
+    ]
+   }
+  },
+  {
+   "classMaxValue": 61,
+   "label": "53 - 61",
+   "description": "",
+   "symbol": {
+    "type": "esriSMS",
+    "style": "esriSMSCircle",
+    "size": 4,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0,
+    "color": [
+     215,
+     165,
+     0,
+     255
+    ]
+   }
+  },
+  {
+   "classMaxValue": 73,
+   "label": "62 - 73",
+   "description": "",
+   "symbol": {
+    "type": "esriSMS",
+    "style": "esriSMSCircle",
+    "size": 4,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0,
+    "color": [
+     222,
+     142,
+     0,
+     255
+    ]
+   }
+  },
+  {
+   "classMaxValue": 81,
+   "label": "74 - 81",
+   "description": "",
+   "symbol": {
+    "type": "esriSMS",
+    "style": "esriSMSCircle",
+    "size": 4,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0,
+    "color": [
+     228,
+     117,
+     0,
+     255
+    ]
+   }
+  },
+  {
+   "classMaxValue": 93,
+   "label": "82 - 93",
+   "description": "",
+   "symbol": {
+    "type": "esriSMS",
+    "style": "esriSMSCircle",
+    "size": 4,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0,
+    "color": [
+     235,
+     90,
+     0,
+     255
+    ]
+   }
+  },
+  {
+   "classMaxValue": 116,
+   "label": "94 - 116",
+   "description": "",
+   "symbol": {
+    "type": "esriSMS",
+    "style": "esriSMSCircle",
+    "size": 4,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0,
+    "color": [
+     242,
+     62,
+     0,
+     255
+    ]
+   }
+  },
+  {
+   "classMaxValue": 142,
+   "label": "117 - 142",
+   "description": "",
+   "symbol": {
+    "type": "esriSMS",
+    "style": "esriSMSCircle",
+    "size": 4,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0,
+    "color": [
+     248,
+     32,
+     0,
+     255
+    ]
+   }
+  },
+  {
+   "classMaxValue": 233,
+   "label": "143 - 233",
+   "description": "",
+   "symbol": {
+    "type": "esriSMS",
+    "style": "esriSMSCircle",
+    "size": 4,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0,
+    "color": [
+     255,
+     0,
+     0,
+     255
+    ]
+   }
+  }
+ ]
+}
+
+
