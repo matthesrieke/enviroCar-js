@@ -21,7 +21,7 @@ function init() {
 
 	enviroCar.dataUrl = "http://ags.dev.52north.org:6080/arcgis/rest/services/enviroCar/enviroCarTracks/MapServer";
 
-	enviroCar.map = new esri.Map("map", {
+	enviroCar.map = new esri.Map("enviroCarMap", {
 		center : [ 7.633, 51.9585 ],
 		zoom : previousLod,
 		basemap : "gray",
