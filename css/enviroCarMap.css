@@ -1,0 +1,65 @@
+html,body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+h3 {
+	margin: 0 0 5px 0;
+	border-bottom: 1px solid #444;
+	text-align: center;
+}
+
+.shadow {
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px #888;
+	box-shadow: 0 0 5px #888;
+}
+
+#map {
+	margin: 0;
+	padding: 0;
+}
+
+#feedback {
+	background: #fff;
+	bottom: 30px;
+	color: #444;
+	position: absolute;
+	font-family: arial;
+	font-size: 0.8em;
+	height: 440px;
+	left: 30px;
+	margin: 5px;
+	padding: 10px;
+	top: 30px;
+	width: 200px;
+	z-index: 40;
+}
+
+#note {
+	font-size: 80%;
+	padding: 0 0 10px 0;
+}
+
+#fieldNames_popup .dijitComboBoxMenu .dijitMenuItem {
+	font-size: 0.8em;
+}
+
+select#fieldNames {
+	display: block;
+	width: 100px;
+}
+
+div#fieldNames_popup .dijitMenuItem {
+	font-size: 0.8em;
+}
+
+#loading {
+	visibility: hidden;
+}
+
+#legendDiv {
+	padding: 10px 0 0 0;
+}
